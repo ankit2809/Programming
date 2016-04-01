@@ -1,0 +1,1 @@
+cp /usr/sap/Q79/DVEBMGS01/work/dev_w0 /SCC_tmp/dwnld_traces/Q79_dev_w0
