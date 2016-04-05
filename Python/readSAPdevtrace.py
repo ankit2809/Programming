@@ -2,7 +2,7 @@ import sys
 # define main function to read, cleanse and write
 def main(ifile, ofile):
     lines = [line.rstrip('\n') for line in open(ifile)]
-    alerts = ['']*2000
+    alerts = ['']*20000
     days = 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
     alerts[0]=lines[0]
     j=1
