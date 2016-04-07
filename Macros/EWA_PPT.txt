@@ -1,0 +1,37 @@
+Sub Rating(oSh As Shape)
+With oSh
+            If .Fill.Transparency <> 0 Then
+            .Fill.Transparency = 0
+            Else
+            .Fill.Transparency = 0.7
+            End If
+        End With
+       
+        
+End Sub
+
+Sub Rating_new(oSh As Shape)
+With oSh
+ .Fill.Transparency = 0
+            If .Fill.ForeColor.RGB = RGB(190, 0, 0) Then
+            .Fill.ForeColor.RGB = RGB(0, 190, 0)
+            Else
+            If .Fill.ForeColor.RGB = RGB(0, 190, 0) Then
+            .Fill.ForeColor.RGB = RGB(190, 190, 0)
+            Else
+            If .Fill.ForeColor.RGB = RGB(190, 190, 0) Then
+            .Fill.ForeColor.RGB = RGB(190, 0, 0)
+            Else
+            .Fill.ForeColor.RGB = RGB(190, 0, 0)
+            End If
+            End If
+            End If
+           ActivePresentation.Slides(3).Shapes(.Name).Fill.ForeColor.RGB = .Fill.ForeColor.RGB
+        End With
+
+
+       
+        
+End Sub
+
+

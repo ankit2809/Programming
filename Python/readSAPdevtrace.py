@@ -2,6 +2,7 @@ import sys
 # define main function to read, cleanse and write
 def main(ifile, ofile):
     lines = [line.rstrip('\n') for line in open(ifile)]
+    lines = list(line for line in lines if line)
     alerts = ['']*20000
     days = 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
     alerts[0]=lines[0]
@@ -23,7 +24,7 @@ def main(ifile, ofile):
 # Write the formatted and filtered content to output file
     foo = open(ofile,'w')
     foo.writelines(["%s\n" % x  for x in alerts if x])
-    print("Output file written")
+    print("Output file written as " + ofile)
     foo.close()
 if __name__=='__main__':
     sys.exit(main(sys.argv[1], sys.argv[2]))

@@ -3,20 +3,20 @@ import sys
 def main(ifile, ofile):
     lines = [line.rstrip('\n') for line in open(ifile)]
     lines = list(line for line in lines if line)
-    alerts = ['']*20000
+    alerts = ['']*40000
     alerts[0]=lines[0]
     j=1
     days= 'Mon','Tue','Wed','Thu','Fri','Sat','Sun'
     for i in range(1,len(lines)):
         words= lines[i].split(' ')
-        if (int(words[0][:3] in days) & int(alerts[j - 1].split(' ')[0][:3] in days)):
+        if (int(words[2][:3] in days) & int(alerts[j - 1].split(' ')[2][:3] in days)):
             alerts[j - 1] = lines[i]
-        elif (words[0][:3] not in days):
+        elif (words[2][:3] not in days):
             for word in words:
-                if ("ORA-" in word):
+                if (int("failed" in word) | int("ERROR" in word)):
                     alerts[j] = lines[i]
                     j = j + 1
-        elif (int(words[0][:3] in days)):
+        elif (int(words[2][:3] in days)):
             alerts[j] = lines[i]
             j = j + 1
 # Write the formatted and filtered content to output file
