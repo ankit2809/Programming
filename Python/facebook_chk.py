@@ -3,7 +3,7 @@ import json
 import codecs
 '''def pp(o):
         print(json.dumps(o,indent=1))
-g=facebook.GraphAPI('EAACEdEose0cBADnJAxlvWCyHwHLdOGEgIWbZC3RpfyJopGZBIBi6BjYBVLe7AphcYqLjkr95IItMlP410QsS2HaQMopZByG15jTBGKk2zedbLawlarPDkajTuJQWJVhGTxtZCf1D6PPbuOIzIKFP78Gn8z1FUv1MNggnMxGxcwZDZD')
+g=facebook.GraphAPI('xxxxxxx')
 pepsi_id = '1431338237110781'
 def int_format(n): return "{:,}".format(n)
 print ("Pepsi likes:", int_format(g.get_object(pepsi_id)['likes']))
@@ -11,7 +11,7 @@ print ("Pepsi likes:", int_format(g.get_object(pepsi_id)['likes']))
 from operator import itemgetter
 from prettytable import PrettyTable
 from collections import Counter
-g=facebook.GraphAPI('EAACEdEose0cBADnJAxlvWCyHwHLdOGEgIWbZC3RpfyJopGZBIBi6BjYBVLe7AphcYqLjkr95IItMlP410QsS2HaQMopZByG15jTBGKk2zedbLawlarPDkajTuJQWJVhGTxtZCf1D6PPbuOIzIKFP78Gn8z1FUv1MNggnMxGxcwZDZD')
+g=facebook.GraphAPI('xxxxxxxx')
 friends = g.get_connections("me", "friends")['data']
 likes = { friend['name'] : g.get_connections(friend['id'], "likes")['data']
 for friend in friends }
